@@ -39,23 +39,28 @@ Linux: Choose the .tar.gz archieve and extract it
 *2b)* Open a Powershell (Windows) or a terminal (macOS or Linux) and run the following commands. First, make a folder to store your OpenFOAM data:
 
 ```shell
-mkdir $HOME/openfoam-data
+cd $HOME
+mkdir openfoam
+cd openfoam
+mkdir ./openfoam-data
+mkdir ./openfoam-dockerfiles
 ```
+
+You should now have two folder ```openfoam-data``` and ```openfoam-dockerfiles``` in a folder in your home directory.
+
 
 *2c)* Next, clone this repository by:
 
 ```shell
-git clone https://github.com/jakobhaervig/openfoam-dockerfiles.git $HOME/openfoam-dockerfiles
+git clone https://github.com/jakobhaervig/openfoam-dockerfiles.git ./openfoam-dockerfiles
 ```
-
-You should now have two folder ```openfoam-data``` and ```openfoam-dockerfiles``` in your home folder.
 
 *2d)* Now, start the program called Docker Desktop to start the Docker engine.
 
 *2e)* Build the OpenFOAM image:
 
 ```shell
-docker image build --no-cache -t openfoam $HOME/openfoam-dockerfiles/esi/latest/
+docker image build --no-cache -t openfoam ./openfoam-dockerfiles/com/latest/
 ```
 
 ## 3. Run the Docker container
